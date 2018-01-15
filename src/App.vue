@@ -6,6 +6,12 @@
 </template>
 
 <script>
+import Vue from 'vue';
+import VueMaterial from 'vue-material';
+import 'vue-material/dist/vue-material.min.css';
+
+Vue.use(VueMaterial);
+
 export default {
   name: 'App',
 };
@@ -19,5 +25,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.pointer {
+  cursor: pointer;
 }
 </style>

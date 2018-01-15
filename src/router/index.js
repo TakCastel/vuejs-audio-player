@@ -8,7 +8,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'AudioSource',
+      name: 'AUDIO_SOURCE',
       component: AudioSource,
     },
   ],
