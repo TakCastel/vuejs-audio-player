@@ -29,4 +29,7 @@ export default {
 .pointer {
   cursor: pointer;
 }
+.hide {
+  display: none;
+}
 </style>
