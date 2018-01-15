@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import AudioSource from '@/components/AudioSource';
+import AudioPlayer from '@/components/AudioPlayer';
 
 Vue.use(Router);
 
@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'AUDIO_SOURCE',
-      component: AudioSource,
+      name: 'PLAYER',
+      component: AudioPlayer,
     },
   ],
 });

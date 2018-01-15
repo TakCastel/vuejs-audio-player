@@ -1,25 +1,12 @@
 <template>
-  <div>
-    <audio id="audio" controls="">
-      <source src="http://rivegauche.streamakaci.com/rivegauche.mp3" type="audio/mpeg">
-    </audio>
-    <div class="player">
-      <volume-on/>
-      <volume-bar/>
-    </div>
-  </div>
+  <audio id="audio">
+    <source src="http://rivegauche.streamakaci.com/rivegauche.mp3" type="audio/mpeg">
+  </audio>
 </template>
 
 <script>
-import VolumeBar from '@/components/VolumeControl/VolumeBar';
-import VolumeOn from '@/components/VolumeControl/VolumeIcon/VolumeOn';
-
 export default {
   name: 'AudioSource',
-  components: {
-    VolumeBar,
-    VolumeOn,
-  },
 };
 </script>
 
