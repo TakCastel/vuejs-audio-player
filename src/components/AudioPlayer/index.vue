@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <h1>javascript audio player</h1>
+    <p>this is an example of a javascript audio player built with vuejs</p>
     <audio-source/>
     <div class="player">
       <play/>
@@ -9,6 +10,7 @@
       <volume-off/>
       <volume-bar/>
     </div>
+    <!-- <md-button>Fork this project</md-button> -->
   </div>
 </template>
 
@@ -52,11 +54,12 @@ export default {
   align-items: center;
   justify-content: center;
   border-radius: 2em;
-  margin: 0 1em;
+  margin: 1em;
   padding: 1em;
   transition: all 0.1s;
 }
 .player:hover {
   background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0.5em 0.5em 2em -1.5em rgba(0,0,0, 1);
 }
 </style>

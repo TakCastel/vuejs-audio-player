@@ -30,7 +30,14 @@ body {
 h1 {
   font-size: 3em;
   font-weight: 400;
-  line-height: 3em;
+  line-height: 2em;
+}
+p {
+  font-size: 1.2em;
+}
+a {
+  text-decoration: none;
+  color: var(--primary)
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
