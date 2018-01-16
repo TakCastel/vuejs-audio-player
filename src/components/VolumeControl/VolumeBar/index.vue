@@ -15,20 +15,19 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .volume-total {
     width: 10em;
     height: 0.25em;
     cursor: pointer;
-    background: #999;
+    background: var(--secondary);
   }
   .volume-set {
     position: relative;
     width: 8em;
     height: 0.25em;
     cursor: pointer;
-    background: #e94b24;
+    background: var(--primary);
   }
   .volume-set:after {
     content: '';
@@ -39,6 +38,6 @@ export default {
     width: 1em;
     height: 1em;
     border-radius: 0.5em;
-    background: #e94b24;
+    background: var(--primary);
   }
 </style>

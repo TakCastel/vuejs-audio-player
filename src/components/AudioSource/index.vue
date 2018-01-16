@@ -10,16 +10,5 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.player:first-child {
-  flex: 1;
-}
-.player {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 0 1em;
-  padding: 1em;
-}
 </style>
