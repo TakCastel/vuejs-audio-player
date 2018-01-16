@@ -1,14 +1,19 @@
 <template>
-  <div class="pointer svg">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-      <path class="icon-svg" d="M8 5v14l11-7z" />
-    </svg>
+  <div v-on:click="play" class="pointer svg">
+    <md-icon class="pointer">play_arrow</md-icon>
   </div>
 </template>
 
 <script>
+/* eslint-disable */
 export default {
   name: 'Play',
+  methods: {
+    play: function (event) {
+      event.preventDefault();
+      audio.play();
+    },
+  },
 };
 </script>
 

@@ -5,13 +5,15 @@
 </template>
 
 <script>
+/* eslint-disable */
 export default {
   name: 'VolumeBar',
-  // data() {
-  //   return {
-  //     volumeBar: 'This is the VolumeBar Component',
-  //   };
-  // },
+  methods: {
+    drag: function (event) {
+      event.preventDefault();
+      audio.muted = true;
+    },
+  },
 };
 </script>
 
@@ -34,9 +36,12 @@ export default {
     display: block;
     position: absolute;
     right: -8px;
-    top: -5px;
-    width: 1em;
-    height: 1em;
+    top: -50%;
+    bottom: -50%;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 0.75em;
+    height: 0.75em;
     border-radius: 0.5em;
     background: var(--primary);
   }

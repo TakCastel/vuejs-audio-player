@@ -7,6 +7,7 @@
 
 <script>
 import Vue from 'vue';
+
 import VueMaterial from 'vue-material';
 import 'vue-material/dist/vue-material.min.css';
 
@@ -26,6 +27,7 @@ export default {
 }
 body {
   background: linear-gradient(-45deg, rgba(233, 75, 36, 0.9), rgba(233, 172, 36, 0.75));
+  font-size: 1.2em;
 }
 h1 {
   font-size: 3em;
@@ -49,22 +51,8 @@ a {
 }
 .pointer {
   cursor: pointer;
-  transition: all 0.1s,
 }
 .pointer:hover {
   color: var(--primary);
-}
-.svg {
-  display: inline-flex;
-}
-.icon-svg {
-  fill: var(--secondary);
-  transition: all 0.1s;
-}
-.svg:hover .icon-svg {
-  fill: var(--primary);
-}
-.hide {
-  display: none;
 }
 </style>
