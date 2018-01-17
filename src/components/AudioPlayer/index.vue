@@ -6,8 +6,7 @@
     </md-content>
     <audio-source/>
     <div class="player">
-      <play/>
-      <pause/>
+      <audio-control/>
       <volume-icon/>
       <volume-bar/>
     </div>
@@ -17,8 +16,7 @@
 
 <script>
 import AudioSource from '@/components/AudioSource';
-import Play from '@/components/AudioControl/Play';
-import Pause from '@/components/AudioControl/Pause';
+import AudioControl from '@/components/AudioControl';
 import VolumeBar from '@/components/VolumeControl/VolumeBar';
 import VolumeIcon from '@/components/VolumeControl/VolumeIcon';
 
@@ -26,8 +24,7 @@ export default {
   name: 'AudioPlayer',
   components: {
     AudioSource,
-    Play,
-    Pause,
+    AudioControl,
     VolumeBar,
     VolumeIcon,
   },

@@ -3,11 +3,23 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
+/* eslint-disable */
 // root state object.
 // each Vuex instance is just a single state tree.
 const state = {
-  volume: true,
+  volumeMute: false,
 };
+
+const mutations = {
+  volumeToggle: function(state) {
+    state.volumeMute = !state.volumeMute
+    audio.muted = !audio.muted
+  },
+}
+
+const actions = {
+
+}
 
 // mutations are operations that actually mutates the state.
 // each mutation handler gets the entire state tree as the
@@ -45,14 +57,16 @@ const state = {
 
 // getters are functions
 // const getters = {
-//   // evenOrOdd: state => state.count % 2 === 0 ? 'even' : 'odd'
+//   onVisible: statestate.onVisible,
 // };
 
 // A Vuex instance is created by combining the state, mutations, actions,
 // and getters.
 export default new Vuex.Store({
   state,
+  mutations,
   // getters,
   // actions,
   // mutations,
-});
+})
+

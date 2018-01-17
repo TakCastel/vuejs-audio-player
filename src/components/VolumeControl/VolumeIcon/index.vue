@@ -1,29 +1,23 @@
 <template>
   <div class="pointer" v-on:click="toggle()">
-    <md-icon v-show="upOpen">volume_up</md-icon>
-    <md-icon v-show="offOpen">volume_off</md-icon>
+    <md-icon v-show="!this.$store.state.volumeMute">volume_up</md-icon>
+    <md-icon v-show="this.$store.state.volumeMute">volume_off</md-icon>
   </div>
 </template>
 
 <script>
 /* eslint-disable */
+import { store } from '@/store';
+
 export default {
-  name: 'VolumeOff',
-    data: function() {
-      return {
-        upOpen: true,
-        offOpen: false,
-      }
-    },
+  name: 'VolumeIcon',
   methods:{
     toggle: function() {
-      this.upOpen = !this.upOpen
-      this.offOpen = !this.offOpen
-      audio.muted = !audio.muted
-      console.log('test')
+      this.$store.commit('volumeToggle');
     }
-  }
+  },
 };
+
 </script>
 
 <style scoped>

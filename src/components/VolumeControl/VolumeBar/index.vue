@@ -1,6 +1,14 @@
 <template>
   <div class="volume-total">
-    <div class="volume-set"></div>
+    <div class="volume-set" v-on:click="drag()"></div>
+    <!-- <input
+      orient="horizontal"
+      v-model="volumeValue"
+      v-on:change="update()"
+      type="range"
+      min="0"
+      max="100"
+      class="volume-slider"/> -->
   </div>
 </template>
 
@@ -8,11 +16,22 @@
 /* eslint-disable */
 export default {
   name: 'VolumeBar',
+  data: function() {
+      return {
+        volumeValue: 7.5,
+        volumeDrag: false,
+      }
+    },
   methods: {
     drag: function (event) {
-      event.preventDefault();
-      audio.muted = true;
-    },
+      const volume = document.getElementsByClassName('.volume-set')
+      audio.muted = false
+
+      console.log(volume)
+    }
+    // update: function (event) {
+    //   audio.volume = this.volumeValue / 100
+    // },
   },
 };
 </script>
@@ -26,7 +45,7 @@ export default {
   }
   .volume-set {
     position: relative;
-    width: 8em;
+    width: 75%;
     height: 0.25em;
     cursor: pointer;
     background: var(--primary);
