@@ -1,14 +1,6 @@
 <template>
   <div class="volume-total">
     <div class="volume-set" v-on:click="drag()"></div>
-    <!-- <input
-      orient="horizontal"
-      v-model="volumeValue"
-      v-on:change="update()"
-      type="range"
-      min="0"
-      max="100"
-      class="volume-slider"/> -->
   </div>
 </template>
 
@@ -16,7 +8,7 @@
 /* eslint-disable */
 export default {
   name: 'VolumeBar',
-  data: function() {
+  data() {
       return {
         volumeValue: 7.5,
         volumeDrag: false,
@@ -25,7 +17,14 @@ export default {
   methods: {
     drag: function (event) {
       const volume = document.getElementsByClassName('.volume-set')
+      const percentage = 0
       audio.muted = false
+
+      // const updateVolume = function (axis)
+
+      if (this.$store.state.volumeMute === true) {
+        this.$store.state.volumeMute = !this.$store.state.volumeMute
+      }
 
       console.log(volume)
     }

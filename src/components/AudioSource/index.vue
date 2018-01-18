@@ -5,11 +5,16 @@
 </template>
 
 <script>
+import audio from '@/assets/audio/omiki-walame.mp3';
+
+// You can also use this url for radio test :
+// http://rivegauche.streamakaci.com/rivegauche.mp3
+
 export default {
   name: 'AudioSource',
   data() {
     return {
-      audioSource: 'http://rivegauche.streamakaci.com/rivegauche.mp3',
+      audioSource: audio,
     };
   },
 };
