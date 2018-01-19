@@ -1,58 +1,88 @@
 <template>
-  <div class="volume-total">
-    <div class="volume-set" v-on:click="drag()"></div>
+  <div class="volumeBar">
+    <input
+      id="volumeBarInput"
+      type="range"
+      min="0"
+      max="100"
+      v-on:mouseup="updateVolume()"
+      v-model="volumeValue"
+    >
   </div>
 </template>
 
 <script>
 /* eslint-disable */
 export default {
+
   name: 'VolumeBar',
   data: function() {
     return {
       volumeValue: 7.5,
-      volumeDrag: false,
     }
   },
   methods: {
-    drag: function() {
+    updateVolume: function() {
+      const volume = document.getElementById('volumeBarInput').value;
+      console.log(volume)
       audio.muted = false
       if (this.$store.state.volumeMute === true) {
-        this.$store.state.volumeMute = !this.$store.state.volumeMute
+        this.$store.state.volumeMute = false
       }
     }
   },
 
 
 };
+
 </script>
 
 <style scoped>
-  .volume-total {
-    width: 10em;
-    height: 0.25em;
-    cursor: pointer;
-    background: var(--secondary);
+
+  .volumeBar {
+    display:flex; 
+    width: 5em 
   }
-  .volume-set {
+
+  input[type=range] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-progress-appearance: none;
     position: relative;
-    width: 75%;
+    width: 100%;
     height: 0.25em;
     cursor: pointer;
     background: var(--primary);
   }
-  .volume-set:after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: -8px;
-    top: -50%;
-    bottom: -50%;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 0.75em;
-    height: 0.75em;
-    border-radius: 0.5em;
+  input[type=range]:focus {
+    outline: 0
+  }
+
+  /* Webkit */
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 1em;
     background: var(--primary);
+    cursor: pointer;
+    }
+
+  /* Firefox  */
+  input[type=range]::-moz-range-thumb {
+    height: 18px;
+    width: 18px;
+    border-radius: 1em;
+    background: var(--primary);
+    cursor: pointer;
+  }
+
+  /* IE */
+  input[type=range]::-ms-thumb {
+    height: 18px;
+    width: 18px;
+    border-radius: 1em;
+    background: var(--primary);
+    cursor: pointer;
   }
 </style>

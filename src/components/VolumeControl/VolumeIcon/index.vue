@@ -16,7 +16,7 @@ export default {
       this.$store.commit('volumeToggle');
     }
   },
-};
+}; 
 
 </script>
 
