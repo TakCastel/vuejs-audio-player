@@ -1,33 +1,18 @@
 <template>
   <div class="pointer" v-on:click="toggle()">
-    <md-icon v-show="playVisible">play_arrow</md-icon>
-    <md-icon v-show="pauseVisible">pause</md-icon>
+    <md-icon v-show="!this.$store.state.audioPlay">play_arrow</md-icon>
+    <md-icon v-show="this.$store.state.audioPlay">pause</md-icon>
   </div>
 </template>
 
 <script>
-/* eslint-disable */
+import { store } from '@/store';
 export default {
   name: 'AudioControl',
-    data: function() {
-      return {
-        playVisible: true,
-        pauseVisible: false,
-      }
-    },
   methods:{
     toggle: function() {
-      this.playVisible = !this.playVisible
-      this.pauseVisible = !this.pauseVisible
-      if (this.playVisible === false) {
-        audio.play()
-      } else {
-        audio.pause()
-      }
+      this.$store.commit('audioToggle');
     }
   }
 };
 </script>
-
-<style scoped>
-</style>

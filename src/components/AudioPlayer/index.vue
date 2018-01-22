@@ -1,17 +1,26 @@
 <template>
+
+  <!-- Global container of components -->
   <div class="container">
+
+    <!-- Component title and description -->
     <md-content md-theme="selection-orange">
       <h1>javascript audio player</h1>
       <p>this is an example of a javascript audio player built with vuejs</p>
     </md-content>
+
+    <!-- Setting source of audio -->
     <audio-source/>
+
+    <!-- Player component -->
     <div class="player">
       <audio-control/>
       <volume-icon/>
       <volume-bar/>
     </div>
-    <!-- <md-button>Fork this project</md-button> -->
+
   </div>
+
 </template>
 
 <script>
@@ -31,8 +40,7 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style type="css" scoped>
 .container {
   display: flex;
   flex-direction: column;

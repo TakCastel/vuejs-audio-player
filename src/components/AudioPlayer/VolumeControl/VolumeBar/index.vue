@@ -7,42 +7,33 @@
       max="100"
       value=volume
       v-on:input="update()"
-      v-model="volume"
-    >
+      v-model="volume">
   </div>
 </template>
 
 <script>
-/* eslint-disable */
 import { store } from '@/store';
-
 export default {
-
   name: 'VolumeBar',
   data: function() {
     return {
       volume: this.$store.state.volumeValue,
     }
   },
-
   methods: {
     update: function() {      
       this.$store.commit('updateVolume');
       const volume = this.$store.state.volumeValue
     }
   },
-
 };
-
 </script>
 
 <style scoped>
-
   .volumeBar {
     display:flex; 
     width: 5em 
   }
-
   input[type=range] {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -56,7 +47,6 @@ export default {
   input[type=range]:focus {
     outline: 0
   }
-
   /* Webkit */
   input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -66,7 +56,6 @@ export default {
     background: var(--primary);
     cursor: pointer;
     }
-
   /* Firefox  */
   input[type=range]::-moz-range-thumb {
     height: 18px;
@@ -75,7 +64,6 @@ export default {
     background: var(--primary);
     cursor: pointer;
   }
-
   /* IE */
   input[type=range]::-ms-thumb {
     height: 18px;

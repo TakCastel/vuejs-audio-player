@@ -7,6 +7,7 @@ Vue.use(Vuex);
 
 // Root state object
 const state = {
+  audioPlay: false,
   volumeMute: false,
   volumeValue: 75,
   volumeSaved: 75,
@@ -14,8 +15,18 @@ const state = {
 
 const mutations = {
 
+  // Toggle play/pause
+  audioToggle: function() {
+    state.audioPlay = !state.audioPlay
+    if (state.audioPlay === true) {
+      audio.play()
+    } else {
+      audio.pause()
+    }
+  },
+
   // Toggle volume on/off
-  volumeToggle: function(state) {
+  volumeToggle: function() {
     state.volumeSaved = state.volumeValue
 
     state.volumeMute = !state.volumeMute

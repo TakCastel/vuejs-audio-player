@@ -6,9 +6,7 @@
 </template>
 
 <script>
-/* eslint-disable */
 import { store } from '@/store';
-
 export default {
   name: 'VolumeIcon',
   methods:{
@@ -17,8 +15,4 @@ export default {
     }
   },
 }; 
-
 </script>
-
-<style scoped>
-</style>
