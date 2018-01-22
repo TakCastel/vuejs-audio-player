@@ -1,37 +1,36 @@
 <template>
   <div class="volumeBar">
     <input
-      id="volumeBarInput"
+      id="volumeInput"
       type="range"
       min="0"
       max="100"
-      v-on:mouseup="updateVolume()"
-      v-model="volumeValue"
+      value=volume
+      v-on:input="update()"
+      v-model="volume"
     >
   </div>
 </template>
 
 <script>
 /* eslint-disable */
+import { store } from '@/store';
+
 export default {
 
   name: 'VolumeBar',
   data: function() {
     return {
-      volumeValue: 7.5,
-    }
-  },
-  methods: {
-    updateVolume: function() {
-      const volume = document.getElementById('volumeBarInput').value;
-      console.log(volume)
-      audio.muted = false
-      if (this.$store.state.volumeMute === true) {
-        this.$store.state.volumeMute = false
-      }
+      volume: this.$store.state.volumeValue,
     }
   },
 
+  methods: {
+    update: function() {      
+      this.$store.commit('updateVolume');
+      const volume = this.$store.state.volumeValue
+    }
+  },
 
 };
 

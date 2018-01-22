@@ -4,17 +4,54 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 /* eslint-disable */
-// root state object.
-// each Vuex instance is just a single state tree.
+
+// Root state object
 const state = {
   volumeMute: false,
+  volumeValue: 75,
+  volumeSaved: 75,
 };
 
 const mutations = {
+
+  // Toggle volume on/off
   volumeToggle: function(state) {
+    state.volumeSaved = state.volumeValue
+
     state.volumeMute = !state.volumeMute
     audio.muted = !audio.muted
+
+    // Handle specific volume behavior when toggle
+    if (audio.muted === true) {
+      // Forces the volume bar to switch off
+      document.getElementById('volumeInput').value = 0
+    } else if (audio.muted !== true && state.volumeSaved >= 10) {
+      // Forces the volume bar to recover last position
+      document.getElementById('volumeInput').value = state.volumeSaved
+    } else if (audio.muted !== true && state.volumeSaved < 10) {
+      // Forces the volume to be at least 10 after toggle
+      document.getElementById('volumeInput').value = 10
+      state.volumeValue = 10
+    }
   },
+
+  // Update volume
+  updateVolume: function() {
+    const volume = document.getElementById('volumeInput').value;
+    const percentage = volume / 100
+      
+    audio.muted = false
+    audio.volume = percentage
+    state.volumeValue = volume
+
+    if (state.volumeMute === true) {
+      state.volumeMute = false
+    } else if (volume <= 0) {
+      state.volumeMute = true
+      audio.muted
+    }
+  }
+
 }
 
 const actions = {

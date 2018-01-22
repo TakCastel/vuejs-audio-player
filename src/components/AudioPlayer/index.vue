@@ -15,10 +15,10 @@
 </template>
 
 <script>
-import AudioSource from '@/components/AudioSource';
-import AudioControl from '@/components/AudioControl';
-import VolumeBar from '@/components/VolumeControl/VolumeBar';
-import VolumeIcon from '@/components/VolumeControl/VolumeIcon';
+import AudioSource from '@/components/AudioPlayer/AudioSource';
+import AudioControl from '@/components/AudioPlayer/AudioControl';
+import VolumeBar from '@/components/AudioPlayer/VolumeControl/VolumeBar';
+import VolumeIcon from '@/components/AudioPlayer/VolumeControl/VolumeIcon';
 
 export default {
   name: 'AudioPlayer',
