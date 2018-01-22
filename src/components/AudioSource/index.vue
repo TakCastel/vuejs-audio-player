@@ -5,12 +5,13 @@
 </template>
 
 <script>
+import audio from 'http://rivegauche.streamakaci.com/rivegauche.mp3'
 
 export default {
   name: 'AudioSource',
   data() {
     return {
-      audioSource: 'http://rivegauche.streamakaci.com/rivegauche.mp3',
+      audioSource: audio,
     };
   },
 };
