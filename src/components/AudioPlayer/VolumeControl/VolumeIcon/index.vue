@@ -1,18 +1,17 @@
 <template>
-  <div class="pointer" v-on:click="toggle()">
-    <md-icon v-show="!this.$store.state.volumeMute">volume_up</md-icon>
-    <md-icon v-show="this.$store.state.volumeMute">volume_off</md-icon>
+  <div class="pointer" @click="toggle()">
+    <mu-icon v-show="!this.$store.state.volumeMute" value="volume_up"/>
+    <mu-icon v-show="this.$store.state.volumeMute" value="volume_off"/>
   </div>
 </template>
 
 <script>
-import { store } from '@/store';
 export default {
   name: 'VolumeIcon',
-  methods:{
-    toggle: function() {
+  methods: {
+    toggle() {
       this.$store.commit('volumeToggle');
-    }
+    },
   },
-}; 
+};
 </script>

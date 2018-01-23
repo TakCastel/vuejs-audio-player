@@ -1,18 +1,17 @@
 <template>
-  <div class="pointer" v-on:click="toggle()">
-    <md-icon v-show="!this.$store.state.audioPlay">play_arrow</md-icon>
-    <md-icon v-show="this.$store.state.audioPlay">pause</md-icon>
+  <div class="pointer" @click="toggle()">
+    <mu-icon v-show="!this.$store.state.audioPlay" value="play_arrow"/>
+    <mu-icon v-show="this.$store.state.audioPlay" value="pause"/>
   </div>
 </template>
 
 <script>
-import { store } from '@/store';
 export default {
   name: 'AudioControl',
-  methods:{
-    toggle: function() {
+  methods: {
+    toggle() {
       this.$store.commit('audioToggle');
-    }
-  }
+    },
+  },
 };
 </script>

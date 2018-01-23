@@ -12,27 +12,25 @@
 </template>
 
 <script>
-import { store } from '@/store';
 export default {
   name: 'VolumeBar',
-  data: function() {
+  data() {
     return {
       volume: this.$store.state.volumeValue,
-    }
+    };
   },
   methods: {
-    update: function() {      
+    update() {
       this.$store.commit('updateVolume');
-      const volume = this.$store.state.volumeValue
-    }
+    },
   },
 };
 </script>
 
 <style scoped>
   .volumeBar {
-    display:flex; 
-    width: 5em 
+    display:flex;
+    width: 5em
   }
   input[type=range] {
     -webkit-appearance: none;
@@ -41,6 +39,7 @@ export default {
     position: relative;
     width: 100%;
     height: 0.25em;
+    border-radius: 1em;
     cursor: pointer;
     background: var(--primary);
   }
